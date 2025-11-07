@@ -31,4 +31,18 @@ router.get('/search_result', function (req, res) {
     res.send("You searched for " + req.query.search_text + " in " + req.query.category);
 });
 
+// Show register form
+router.get("/register", (req, res) => {
+  res.render("register.ejs", shopData);
+});
+
+// Handle form submission
+router.post("/registered", (req, res) => {
+  const email = req.body.email;
+  if (!email.includes('@')) {
+    return res.send('Please enter a valid email address!');
+  }
+  res.send('Hello ' + req.body.first + ' ' + req.body.last + '! Email: ' + req.body.email + ' - you have successfully registered!');
+});
+
 module.exports = router;

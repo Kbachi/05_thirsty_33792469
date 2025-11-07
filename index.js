@@ -7,6 +7,8 @@ const port = 8000;
 // Tell Express to use EJS 
 app.set('view engine', 'ejs');
 
+// Set up the body parser 
+app.use(express.urlencoded({ extended: true }));
 
 // app.use(express.static('public'));
 
