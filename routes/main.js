@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 // Define our data that will be passed to templates
 const shopData = {
   shopName: "Liquid Nourishment Store",
@@ -19,15 +20,15 @@ router.get('/about', (req, res) => {
   res.render('about.ejs', shopData);
 });
 
-// Search page (static for now)
+// Search page
 router.get('/search', (req, res) => {
   res.render('search.ejs', shopData);
 });
 
-// Search results route (GET form)
-router.get('/search_result', (req, res) => {
-  const { search_text, category } = req.query;
-  res.send(`You searched for ${search_text} in ${category}`);
+// Search page (static for now)
+router.get('/search_result', function (req, res) {
+    // search in the database
+    res.send("You searched for " + req.query.search_text + " in " + req.query.category);
 });
 
 module.exports = router;

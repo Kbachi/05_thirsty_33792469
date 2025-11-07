@@ -14,5 +14,5 @@ app.set('view engine', 'ejs');
 app.use('/', mainRoutes);
 
 app.listen(port, () => {
-  console.log(`Thirsty Student app listening at http://localhost:${port}`);
+  console.log(`Liquid Nourishment Store app listening at http://localhost:${port}`);
 });
